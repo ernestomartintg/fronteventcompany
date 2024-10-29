@@ -1,0 +1,71 @@
+main>div{
+    background: url(../media/img/fondo.png) center / cover;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main h2{
+    padding: 10px;
+}
+main div section{
+    padding: 10px;
+    width: min(1000px , 100%);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: gray solid 2px;
+    justify-content: center;
+    overflow-x: scroll;
+}
+main div section table{
+    text-align: center;
+    border-collapse: collapse;
+    border: rgba(255, 255, 255, 0.389) solid;
+}
+main div section table td:last-child{
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 5px 0;
+    color: black;
+    -webkit-text-stroke: 2px red;
+    background: rgba(255, 255, 255, 0.132);
+    width: max-content;
+    border-radius: 2px;
+    border: grey solid 1px;
+    padding: 4px 4px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+main>div>section>table>tbody>tr:first-child{
+    background: rgb(0, 0, 0);
+    font-weight: bolder;
+    padding: 20px;
+}
+main>div>section>table>tbody>tr:first-child th{
+    padding: 4px 0;
+}
+main div section table tr:nth-child(odd){
+    background: rgba(255, 255, 255, 0.333);
+}
+main div section table tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.281);
+}
+main div section table td{
+    padding: 0 10px;
+}
+main div section table td:last-child:hover{
+    background: rgb(0, 0, 0);
+    font-weight: bolder;
+    color: rgb(255, 39, 39);
+    transform: scale(1.1);
+}

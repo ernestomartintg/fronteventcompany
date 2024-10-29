@@ -1,0 +1,29 @@
+
+footer{
+    flex-wrap: wrap;
+    padding: 20px;
+    position: static;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: -40px;
+    z-index: 2;
+    width: 100%;
+    height: 120px;
+    background: black;
+}
+footer *{
+    color: white;
+}
+footer>*{
+    margin: 20px;
+}
+footer .footer-social{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:1000px) {
+    footer{
+        height: max-content;
+    }
+}

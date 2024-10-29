@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+nav#idnav{
+    top: 0;
+    position: sticky !important;
+    height: 60px;
+    background-color: rgb(83, 237, 114);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: height .5s;
+    width: 100%;
+    user-select: none;
+    z-index: 90;
+}
+nav::before{
+    bottom: -10px;
+    position: absolute;
+    height: 10px;
+    content: "";
+    background: red;
+    animation: navbarLTR auto linear;
+    animation-timeline: scroll(root block);
+}
+ nav div#izq{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+nav div#der{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+nav a#NavLogo{
+    display: block;
+    height: 100%;
+    padding: 5px;
+}
+nav a#NavLogo img{
+    height: 100%;
+    border-radius: 50%;
+}
+nav a.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    transition: font-size .5s;
+}
+nav a.user i,p{
+    margin:0 5px;
+}
+nav a.izq{
+    justify-self: flex-start !important;
+}
+nav a.der p{
+    transition: 1s;
+}
+nav .hamburguesa{
+    display: none;
+}
+@media screen and (max-width: 1165px) {
+    nav a.user{
+        font-size: 18px;
+        margin: 0 0px;
+        color: red; 
+    }
+    nav{
+        height: 40px;
+    }
+}
+@media screen and (max-width: 890px) {
+    nav{
+        padding-right: 15px;
+    }
+    nav a.user{
+        font-size: 18px;
+        color: blue; 
+    }
+    nav div#der{
+        gap: 2vw;
+    }
+    nav a.user i, nav a.user p{
+        margin:0 0px;
+    }
+    nav{
+        height: 40px;
+    }
+    nav a.der p{
+        font-size: 0;
+    } 
+    nav div#der a{
+        width: 30px;
+        display: flex;
+        justify-content: center;
+    }
+}@media screen and (max-width: 400px){
+    nav{
+        position: sticky;
+    }
+    nav label.hamburguesa{
+        display: flex;
+    }
+    nav div#der{
+        color: blueviolet;
+        position: absolute;
+        flex-direction: column;
+        top: 0px;
+        right: 10px;
+        scale: 0;
+        transition: .8s;
+    }
+    nav input#hamburguesa:checked + div#der{
+        display: flex;
+        flex-direction: column;
+        scale: 1;
+        right: 5px;
+        height: max-content;
+        top: 45px;
+        background-color:  rgb(83, 237, 114);
+    }
+    nav div#der a{
+        min-height: 35px;
+    }
+} 
+@keyframes navbarLTR {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+nav div#der a{
+    scale:1;
+    transition: .5s;
+}
+nav div#der a:hover{
+    overflow: hidden;
+    scale: 1.1;
+    background:  rgb(56, 232, 91);
+    color: black;
+    z-index: 5;
+} 

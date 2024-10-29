@@ -1,0 +1,211 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: min-content;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+form#login{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    height: 50%;
+    background: rgb(118, 118, 118, .5);
+    backdrop-filter: blur(20px);
+    animation: atencion .4s alternate infinite;
+    z-index: 100;
+}
+form#login:hover{
+    animation: none;
+}
+form#login h2{
+    background: rgba(255, 255, 255, 0.671);
+    padding: 10px 30px;
+    backdrop-filter: blur(2px);
+}
+form#login div.input{
+    position: relative;
+    width: 60%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    background: gray;
+    padding: 0 0 0 10px;
+    transition: background  2s,width 2s;
+}
+form#login div.input input{
+    height: 100%;
+    width: 60%;
+    font-size: 16px;
+    background: white;
+    padding: 0px 4px;
+}
+form#login div.input input::placeholder{
+    color: black;
+}
+form#login div.input input:invalid{
+    background: rgb(243, 112, 112);
+    transition: background 2s;
+}
+form#login div.input input:valid{
+    background: rgb(147, 223, 123);
+    transition: background 2s;
+}
+form#login div#botones button{
+    font-size: 20px; margin: 0 10px;
+    padding: 10px;
+    background: white;
+    transition: background 0.5s, font 2s;
+}
+form#login:invalid div#botones button:nth-of-type(1){
+    background: rgb(243, 112, 112);
+}
+form#login:valid div#botones button:nth-of-type(1){
+    background: green;
+    transition: background 0.2s;
+    animation: atencion .5s alternate infinite;
+}
+form#login:valid div#botones button:nth-of-type(1):hover{
+    animation: none;
+    background: rgb(0, 165, 0);
+}
+form#login:valid{
+    animation: none;
+}
+form#login div#botones button:nth-of-type(2):hover{
+    background: rgb(0, 153, 255);
+    transition: background 0.5s;
+}
+label.IniciarSesion{
+    user-select: none;
+    color: black;
+    background-color: rgb(131, 248, 155);
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    position: fixed;
+    width: 110px;
+    align-items: center;
+    top: 0px;
+    left: 80px;
+    font-size: 20px;
+    transition: 0.5s;
+    z-index: 90;
+}
+label.IniciarSesion:hover{
+    cursor: pointer;
+}
+label.IniciarSesion i{
+    margin-right: 5px;
+}
+input#IniciarSesion{
+    display: none;
+}
+label.IniciarSesion ~ input:checked ~ form#login{
+    display: flex;
+}
+label.IniciarSesion ~ input:not(:checked) ~ form#login{
+    display: none;
+}
+label.IniciarSesion ~ input:checked ~ div#fondo{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: calc(100% - 60px);
+    background: rgba(151, 151, 151, 0.339);
+    backdrop-filter: blur(20px);
+    bottom: 0;
+    z-index: 80;
+}
+@media screen and (max-width: 580px) {
+    form#login{
+        width: 80%;
+    }
+    
+    form#login div.input{
+        height: 50px;
+        width: 80%;
+        flex-direction: column;
+        padding: 0;
+    }
+    form#login div.input input{
+        width: 100%;
+    }
+    form#login button{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 395px) {
+    form#login div#botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form#login div#botones button{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1165px){
+    label.IniciarSesion{
+        padding:0 10px;
+        color: black;
+        background-color: rgb(184, 253, 198);
+        position: fixed;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        font-size: 10px;
+        top: 0px;
+        left: 40px;
+        font-size: 20px;
+        width: 90px;
+    }
+    label.IniciarSesion i{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    label.IniciarSesion span{
+        font-size: 18px;
+    }
+
+}
+@keyframes atencion {
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 1deg;
+    }
+    75%{
+        rotate: -1deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+.UC{
+    display: none !important;
+}
+.NU{
+    display: flex !important;
+}
